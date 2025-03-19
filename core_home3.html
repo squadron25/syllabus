@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_syllabus.css"> <!-- Import the styles from register.html -->
+    <title>CORE Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"> <!-- Include Bootstrap Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centers the container horizontally */
+            padding: 20px;
+        }
+        html, body {
+            height: 130%;
+            margin: 0;
+        }
+        .form {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .input-box {
+            width: 100%;
+        }
+        .container {
+            max-width: 1200px; /* Increased width to make it more prominent horizontally */
+            margin: 0 auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            position: relative; /* To position the buttons within the card */
+        }
+
+        /* Select-Box Styles */
+        .select-box {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .select-box select {
+            width: 100%;
+            height: 50px;
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            background: #fff;
+            color: #707070;
+            appearance: none; /* Removes default arrow */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        .select-box::after {
+            content: '\f107'; /* FontAwesome down arrow */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #707070;
+        }
+
+        .save-button {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4be24b; /* Light green color */
+            border-color: #4ddc4d;
+            color: #fff;
+            font-size:1.2rem;
+            padding: 5px 20px;
+            border-radius: 5px;
+            box-shadow: 0 0px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            width: 120px;
+            height: 45px;
+        }
+
+        .save-button i {
+            font-size: 1rem;
+            margin-left: 20px; /* Space between the icon and text */
+        }
+
+        .save-button:hover {
+            background-color: #3eab3e; /* Darker green on hover */
+            border-color: #7AC47A;
+        }
+
+        .select-box:hover {
+            border-color: #007bff; /* Changes border color on hover */
+        }
+
+        .select-box select:focus {
+            border-color: #007bff; /* Focus state */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header {
+            font-family: 'Orbitron', sans-serif; /* Change to your preferred font */
+            font-size: 2rem; /* Adjust the size as needed */
+            font-weight: bold;
+            color: #000000; /* Dark gray color */
+            text-align: center; /* Center the text */
+        }
+
+        /* Styles for Previous and Next buttons */
+        .form-button {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between; /* Space between the buttons */
+        }
+
+        .previous-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 10px;
+            border-radius: 5px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            bottom: 70px; /* Distance from the bottom of the page */
+            left: 10px;  /* Distance from the right of the page */
+        }
+        .next-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            bottom: 70px; /* Distance from the bottom of the page */
+            right: 20px;  /* Distance from the right of the page */
+        }
+      
+        
+        .previous-button i,
+        .next-button i {
+            margin-right: 10px;
+        }
+
+        .previous-button:hover,
+        .next-button:hover {
+            background-color: #0056b3;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 20px;
+            font-size: large;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td {
+            text-align: left;
+        }
+        .learning-objectives th, .learning-objectives td {
+            padding: 10px;
+        }
+        .learning-objectives td:first-child {
+            width: 20%;
+            border-right: 1px solid black;
+        }
+        .empty-space {
+            border-left: none;
+        }
+        .center-heading {
+            text-align: center;
+            font-weight: bold;
+        }
+        .programme-row td {
+            padding-bottom: 20px; /* Adjust this value as needed */
+        }
+        /* Adjusting column widths */
+        .unit-col {
+            width: 10%; /* Smaller size for unit */
+        }
+        .hours-col {
+            width: 10%; /* Smaller size for hours */
+        }
+        .contents-col {
+            width: 80%; /* Larger size for contents */
+        }
+
+        /* Smaller text for Units and No. of Hours */
+        .small-text {
+            font-size: 0.9em;
+        }
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar custom-navbar fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo_full.png" alt="Bootstrap" width="50">
+                <span>&nbsp;Sri SRNMC College</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <section class="container">
+            <HEADER>Mapping with Programme Outcomes</HEADER>
+            <br>
+            <form action="#" class="form row">
+                <table>
+                    <tr>
+                        <th>CO/PSO</th>
+                        <th>PSO 1</th>
+                        <th>PSO 2</th>
+                        <th>PSO 3</th>
+                        <th>PSO 4</th>
+                        <th>PSO 5</th>
+                        <th>PSO 6</th>
+                    </tr>
+                    <tr>
+                        <td class="center-heading">CO 1</td>
+                        <td><input type="text" class="form-control" id="CO1_PSO1" name="CO1_PSO1"></td>
+                        <td><input type="text" class="form-control" id="CO1_PSO2" name="CO1_PSO2"></td>
+                        <td><input type="text" class="form-control" id="CO1_PSO3" name="CO1_PSO3"></td>
+                        <td><input type="text" class="form-control" id="CO1_PSO4" name="CO1_PSO4"></td>
+                        <td><input type="text" class="form-control" id="CO1_PSO5" name="CO1_PSO5"></td>
+                        <td><input type="text" class="form-control" id="CO1_PSO6" name="CO1_PSO6"></td>
+                    </tr>
+                    <tr>
+                        <td class="center-heading">CO 2</td>
+                        <td><input type="text" class="form-control" id="CO2_PSO1" name="CO2_PSO1"></td>
+                        <td><input type="text" class="form-control" id="CO2_PSO2" name="CO2_PSO2"></td>
+                        <td><input type="text" class="form-control" id="CO2_PSO3" name="CO2_PSO3"></td>
+                        <td><input type="text" class="form-control" id="CO2_PSO4" name="CO2_PSO4"></td>
+                        <td><input type="text" class="form-control" id="CO2_PSO5" name="CO2_PSO5"></td>
+                        <td><input type="text" class="form-control" id="CO2_PSO6" name="CO2_PSO6"></td>
+                    </tr>
+                    <tr>
+                        <td class="center-heading">CO 3</td>
+                        <td><input type="text" class="form-control" id="CO3_PSO1" name="CO3_PSO1"></td>
+                        <td><input type="text" class="form-control" id="CO3_PSO2" name="CO3_PSO2"></td>
+                        <td><input type="text" class="form-control" id="CO3_PSO3" name="CO3_PSO3"></td>
+                        <td><input type="text" class="form-control" id="CO3_PSO4" name="CO3_PSO4"></td>
+                        <td><input type="text" class="form-control" id="CO3_PSO5" name="CO3_PSO5"></td>
+                        <td><input type="text" class="form-control" id="CO3_PSO6" name="CO3_PSO6"></td>
+                    </tr>
+                    <tr>
+                        <td class="center-heading">CO 4</td>
+                        <td><input type="text" class="form-control" id="CO4_PSO1" name="CO4_PSO1"></td>
+                        <td><input type="text" class="form-control" id="CO4_PSO2" name="CO4_PSO2"></td>
+                        <td><input type="text" class="form-control" id="CO4_PSO3" name="CO4_PSO3"></td>
+                        <td><input type="text" class="form-control" id="CO4_PSO4" name="CO4_PSO4"></td>
+                        <td><input type="text" class="form-control" id="CO4_PSO5" name="CO4_PSO5"></td>
+                        <td><input type="text" class="form-control" id="CO4_PSO6" name="CO4_PSO6"></td>
+                    </tr>
+                    <tr>
+                        <td class="center-heading">CO 5</td>
+                        <td><input type="text" class="form-control" id="CO5_PSO1" name="CO5_PSO1"></td>
+                        <td><input type="text" class="form-control" id="CO5_PSO2" name="CO5_PSO2"></td>
+                        <td><input type="text" class="form-control" id="CO5_PSO3" name="CO5_PSO3"></td>
+                        <td><input type="text" class="form-control" id="CO5_PSO4" name="CO5_PSO4"></td>
+                        <td><input type="text" class="form-control" id="CO5_PSO5" name="CO5_PSO5"></td>
+                        <td><input type="text" class="form-control" id="CO5_PSO6" name="CO5_PSO6"></td>
+                    </tr>
+                    <tr>
+                        <td class="center-heading">Weightage of course<br>contributed to each PSO</td>
+                        <td><textarea class="form-control COS-textarea" id="Weight_PSO1" name="Weight_PSO1"></textarea></td>
+                        <td><textarea class="form-control COS-textarea" id="Weight_PSO2" name="Weight_PSO2"></textarea></td>
+                        <td><textarea class="form-control COS-textarea" id="Weight_PSO3" name="Weight_PSO3"></textarea></td>
+                        <td><textarea class="form-control COS-textarea" id="Weight_PSO4" name="Weight_PSO4"></textarea></td>
+                        <td><textarea class="form-control COS-textarea" id="Weight_PSO5" name="Weight_PSO5"></textarea></td>
+                        <td><textarea class="form-control COS-textarea" id="Weight_PSO6" name="Weight_PSO6"></textarea></td>
+                    </tr>
+                </table>
+                
+                <button type="button" onclick="submitForm()">Submit</button>
+    <button type="submit" class="btn btn-success save-button">
+                    SAVE<i class="bi bi-bookmark"></i> 
+    </button>
+    </form> <br><br> 
+    </section>
+    </div>
+    <div class="form-button"></div>
+        <button type="submit" class="btn btn-primary previous-button" onclick="location.href='core_home2.html'">
+        &larr;Previous Page
+    </button>
+    <button type="submit" class="btn btn-primary next-button" onclick="location.href='core_home4.html'">
+        Next Page <span class="ml-2">&rarr;</span>
+    </button>
+    </div>
+    <script>
+        function submitForm() {
+            const inputs = document.querySelectorAll(".form-control, .COS-textarea");
+            const data = {};
+            inputs.forEach(input => {
+                data[input.id] = input.value;
+            });
+            localStorage.setItem("tableData", JSON.stringify(data));
+            window.location.href = "table_core1.html";
+        }
+    </script>
+<footer>
+        © 2024 Sri SRNMC
+</footer>
+</body>
+</html>

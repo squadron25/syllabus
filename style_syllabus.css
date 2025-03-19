@@ -1,0 +1,232 @@
+/* Navbar Customizations */
+.custom-navbar .navbar-brand {
+  color: #FFFFFF;
+  font-weight: bold;
+  text-decoration: none;
+}
+body {
+ background-image: url("Sprinkle.svg");
+}
+.card-link{
+  text-decoration: none;
+  
+}
+
+.custom-navbar .navbar-brand:hover,
+.custom-navbar .navbar-brand:active {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.custom-navbar {
+  background-color: #192f59;
+}
+
+/* Background and Container Styling */
+html, body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  padding: 0;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.form-signin {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Label Transition */
+.form-floating label {
+  transition: all 0.3s ease;
+}
+
+.form-floating input:focus + label {
+  transform: translateY(-20px);
+  font-size: 0.875em;
+  color: #007bff;
+}
+/* Styles for the Add button */
+.add-button {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+/* Style the input boxes with class 'COS-input' */
+/*.COS-input {
+  height: 100px;  
+  padding: 10px;
+  font-size: 1rem;
+  box-sizing: border-box; }
+
+.COS-input:focus {
+  border-color: #007bff; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+} */
+
+/* Style the textarea with class 'COS-textarea' */
+.COS-textarea {
+  height: 100px;      /* Adjust height as needed */
+  width: 120px;       /* Adjust width as needed */
+  padding: 10px;
+  font-size: 1rem;
+  resize: none;       /* Prevents resizing by users */
+  overflow-y: auto;   /* Adds a scrollbar if text exceeds the height */
+  box-sizing: border-box; /* Ensures padding is included in width/height */
+  white-space: normal; /* Enables wrapping of text */
+  word-wrap: break-word; /* Breaks long words if necessary */
+}
+
+.COS-textarea:focus {
+  border-color: #007bff; /* Optional: Adds focus effect */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.password-container {
+  position: relative;
+}
+.password-container input {
+  padding-right: 2.5rem;
+}
+.password-container .eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1px; /* Adjust to make the icon smaller or larger */
+
+}
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Welcome Section Styling */
+.welcome-section {
+  margin-top: 20px; /* Adjusts the spacing between the navbar and the text */
+  margin-bottom: 40px; /* Adjusts the spacing between the text and the cards */
+}
+
+.welcome-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #192f59; /* Same as your navbar color for consistency */
+  margin-bottom: 10px;
+  text-align: left; /* Aligns the text to the left */
+}
+
+/* Gradient Line Under the Text */
+.gradient-line {
+  width: 150px; /* Width of the gradient line */
+  height: 5px; /* Thickness of the gradient line */
+  background: linear-gradient(to right, #007bff, #192f59); /* Gradient from blue to navbar color */
+  border-radius: 5px; /* Slightly rounded edges */
+  margin-left: 0px; /* Align the gradient line to the left */
+}
+
+i {
+  font-size: 1.2rem; /* Size for icons */
+}
+
+/* Card Styles */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin-bottom: 20px;
+  width: 300px; /* Set your desired width */
+  height: 200px; /* Set your desired height */
+  overflow: hidden; /* Ensure content does not overflow */
+
+}
+
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.icon-box {
+  font-size: 40px;
+  color: #ffffff;
+  background-color: #007bff;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px auto;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  color: #6c757d;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .icon-box {
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-toggle::after {
+  content: "\f078"; /* Bootstrap icon for down arrow */
+  font-family: 'FontAwesome';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.next button{
+  margin-right: 0%;
+}
+/* Footer Customizations */
+footer {
+  background-color: #192f59;
+  color: #FFFFFF;
+  padding: 1rem 0;
+  text-align: center;
+  z-index: 1000;
+}
